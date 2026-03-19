@@ -1,0 +1,143 @@
+@import url("https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@400;500;600;700&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --radius: 0.625rem;
+    /* Deep royal purple */
+    --background: 0.13 0.06 290;
+    --foreground: 0.95 0.01 280;
+    --card: 0.16 0.07 288;
+    --card-foreground: 0.95 0.01 280;
+    --popover: 0.16 0.07 288;
+    --popover-foreground: 0.95 0.01 280;
+    /* Gold primary */
+    --primary: 0.76 0.14 75;
+    --primary-foreground: 0.12 0.05 290;
+    --secondary: 0.2 0.08 288;
+    --secondary-foreground: 0.95 0.01 280;
+    --muted: 0.2 0.05 288;
+    --muted-foreground: 0.65 0.05 280;
+    --accent: 0.72 0.16 65;
+    --accent-foreground: 0.12 0.05 290;
+    --destructive: 0.577 0.245 27.325;
+    --destructive-foreground: 0.985 0 0;
+    --border: 0.3 0.06 288;
+    --input: 0.25 0.06 288;
+    --ring: 0.76 0.14 75;
+    --chart-1: 0.76 0.14 75;
+    --chart-2: 0.6 0.12 290;
+    --chart-3: 0.5 0.15 30;
+    --chart-4: 0.8 0.18 90;
+    --chart-5: 0.45 0.18 300;
+    --sidebar: 0.13 0.06 290;
+    --sidebar-foreground: 0.95 0.01 280;
+    --sidebar-primary: 0.76 0.14 75;
+    --sidebar-primary-foreground: 0.12 0.05 290;
+    --sidebar-accent: 0.2 0.08 288;
+    --sidebar-accent-foreground: 0.95 0.01 280;
+    --sidebar-border: 0.3 0.06 288;
+    --sidebar-ring: 0.76 0.14 75;
+  }
+
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-family: "Rajdhani", sans-serif;
+    overflow: hidden;
+  }
+}
+
+/* Gold glow effect */
+.gold-glow {
+  text-shadow: 0 0 20px rgba(212, 175, 55, 0.8), 0 0 40px
+    rgba(212, 175, 55, 0.4);
+}
+
+.gold-border-glow {
+  box-shadow: 0 0 15px rgba(212, 175, 55, 0.5), inset 0 0 10px
+    rgba(212, 175, 55, 0.1);
+}
+
+.glass-panel {
+  background: rgba(20, 10, 40, 0.75);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(212, 175, 55, 0.4);
+}
+
+.btn-gold {
+  background: linear-gradient(
+    135deg,
+    rgba(43, 21, 90, 0.9) 0%,
+    rgba(58, 27, 110, 0.9) 100%
+  );
+  border: 1.5px solid rgba(212, 175, 55, 0.7);
+  box-shadow: 0 0 12px rgba(212, 175, 55, 0.3);
+  transition: all 0.2s ease;
+}
+
+.btn-gold:hover {
+  box-shadow: 0 0 25px rgba(212, 175, 55, 0.7), 0 0 50px rgba(212, 175, 55, 0.3);
+  border-color: rgba(212, 175, 55, 1);
+  transform: translateY(-1px);
+}
+
+.btn-gold:active {
+  transform: translateY(0);
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+@keyframes pulse-gold {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.6;
+  }
+}
+
+@keyframes combo-pop {
+  0% {
+    transform: scale(0.5) translateY(0);
+    opacity: 1;
+  }
+  70% {
+    transform: scale(1.3) translateY(-30px);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1) translateY(-60px);
+    opacity: 0;
+  }
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+.animate-pulse-gold {
+  animation: pulse-gold 2s ease-in-out infinite;
+}
+
+.animate-combo-pop {
+  animation: combo-pop 1.2s ease-out forwards;
+}
+
+.orbitron {
+  font-family: "Orbitron", sans-serif;
+}
